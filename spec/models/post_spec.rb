@@ -7,6 +7,16 @@ RSpec.describe Post, type: :model do
   before { first_user.save }
 
   context 'validations' do
+    it 'title should be present' do
+      first_post.title = nil
+      expect(first_post).not_to be_valid
+    end
+
+    it 'title should not exceed 250 characters' do
+      first_post.title = 'x' * 251
+      expect(first_post).not_to be_valid
+    end
+
     it 'comments_counter should not be less than 0' do
       first_post = Post.new(author: first_user, title: 'Hello', text: 'This is my first post')
       first_post.comments_counter = -3
