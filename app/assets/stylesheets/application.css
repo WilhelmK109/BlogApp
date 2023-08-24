@@ -1,15 +1,125 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* {
+  background-color: #fff;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+main {
+  width: 90%;
+  min-height: 100vh;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.users-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.user-container {
+  display: flex;
+  gap: 15px;
+}
+
+.user-container,
+.post-container {
+  padding-bottom: 20px;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+}
+
+.btn-container {
+  display: flex;
+  align-items: center;
+}
+
+.user-bio h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.user-bio .bio {
+  font-size: 19px;
+}
+
+.post-container {
+  margin-bottom: 20px;
+}
+
+.post-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.btn-container.see-posts {
+  display: flex;
+  justify-content: center;
+}
+
+.user-container.posts {
+  margin-bottom: 20px;
+}
+
+h3.post-title {
+  font-size: 30px;
+}
+
+.user-name {
+  font-size: 19px;
+}
+
+.post-details {
+  margin-top: 20px;
+}
+
+.post-details p {
+  line-height: 1.5;
+}
+
+.comments-container,
+.post-comments-div {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  border: 1px solid gray;
+  margin-top: 15px;
+}
+
+.post-comments-div li {
+  font-size: 18px;
+}
+
+.post-comments-div {
+  margin-bottom: 40px;
+}
+
+@media (min-width: 765px) {
+  main {
+    width: 70%;
+    min-height: 90vh;
+    margin: auto;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+}
