@@ -68,9 +68,8 @@ main {
   border: 1px solid gray;
 }
 
-.user-info h3{
+.user-info h3 {
   font-weight: 800;
-
 }
 
 .users-link {
@@ -156,23 +155,6 @@ h3.post-title {
 .post-details p {
   line-height: 1.5;
 }
-
-/* .comments-container,
-.post-comments-div {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  border: 1px solid gray;
-  margin-top: 15px;
-} */
-
-/* .post-comments-div li {
-  font-size: 18px;
-}
-
-.post-comments-div {
-  margin-bottom: 40px;
-} */
 
 @media (min-width: 765px) {
   main {
