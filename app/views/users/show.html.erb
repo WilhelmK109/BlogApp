@@ -1,3 +1,4 @@
+<h2>User Profile</h2>
 <main>
   <div class="user-container">
     <div class="profile-pic">
@@ -18,7 +19,7 @@
       <div class="post-container">
         <h5 class="post-title"><%= post.title %></h5>
         <% if post.text.present? %>
-          <p><%= @post.text[0..100] %>...</p>
+          <p><%= post.text[0..100] %>...</p>
         <% else %>
          <p>No text available...</p>
         <% end %>
