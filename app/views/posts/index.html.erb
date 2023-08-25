@@ -1,5 +1,5 @@
-<h2>All Posts</h2>
 <main>
+  <h2>All Posts</h2>
   <div class="user-container">
     <div class="profile-pic">
       <img src="<%= @user.photo %>" alt="profile-picture">
@@ -20,9 +20,9 @@
           <% else %>
             <p>No text available...</p>
           <% end %>
-        </div>
-        <div class="comment-likes-div">
-          <p>Comment: <%= post.comments_counter || 0 %>, Likes: <%= post.likes_counter || 0 %></p>
+          <p class="comment-likes-div">
+            Comment: <%= post.comments_counter || 0 %>, Likes: <%= post.likes_counter || 0 %>
+          </p>
         </div>
         <ul class="post-comments-div">
           <% if post.five_most_recent_comments.any? %>
