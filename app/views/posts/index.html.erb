@@ -1,2 +1,44 @@
-<h1>All Posts</h1>
-<!-- Placeholder for listing all posts by a user -->
+<main>
+  <h2>All Posts</h2>
+  <div class="user-container">
+    <div class="profile-pic">
+      <img src="<%= @user.photo %>" alt="profile-picture">
+    </div>
+    <div class="user-info">
+      <h3><%= @user.name %></h3>
+      <p class="posts-counter">Number of posts: <%= @user.posts_counter || 0 %></p>
+    </div>
+  </div>
+
+  <article>
+    <% @posts.each do |post| %>
+      <%= link_to user_post_path(@user, post) do %>
+        <div class="post-container">
+          <h5 class="post-title"><%= post.title %></h5>
+          <% if post.text.present? %>
+            <p><%= post.text[0..100] %>...</p>
+          <% else %>
+            <p>No text available...</p>
+          <% end %>
+          <p class="comment-likes-div">
+            Comment: <%= post.comments_counter || 0 %>, Likes: <%= post.likes_counter || 0 %>
+          </p>
+        </div>
+        <ul class="post-comments-div">
+          <% if post.five_most_recent_comments.any? %>
+            <% post.five_most_recent_comments.each do |comment| %>
+              <li>
+                <p>
+                  <%= User.find_by(id: comment.author_id).name if comment.author_id %>:
+                  <%= comment.text[0..60] if comment.text.present? %>...
+                </p>
+              </li>
+            <% end %>
+          <% else %>
+            <li>No comments available...</li>
+          <% end %>
+        </ul>
+      <% end %>
+    <% end %>
+  </article>
+</main>

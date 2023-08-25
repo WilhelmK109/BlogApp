@@ -1,11 +1,13 @@
 class PostsController < ApplicationController
   def index
-    # Placeholder for posts index page
-    # render plain: "Here is a list of posts by a user"
+    @user = User.find(params[:user_id])
+    @posts = @user.posts
+    @comments = Comment.all
   end
 
   def show
-    # Placeholder for post show page
-    # render plain: "Here is a single post"
+    @post = Post.find(params[:id])
+    @user = User.find(params[:user_id])
+    @comments = Comment.where(post_id: params[:id])
   end
 end

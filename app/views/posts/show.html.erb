@@ -1,2 +1,28 @@
-<h1>Post</h1>
-<!-- Placeholder for displaying a single post -->
+<main>
+  <div class="single-post-div">
+    <article class="post-article">
+      <div class="post-info">
+        <div>
+          <h3 class="post-title"><%= @post.title %></h3>
+          <p class="user-name">by <%= @user.name%></p>
+        </div>
+        <p class="posts-counter">Comments: <%= @post.comments_counter || 0 %>, Likes: <%= @post.likes_counter || 0 %></p>
+      </div>
+      <div class="post-details">
+        <p><%= @post.text %></p>
+      </div>
+    </article>
+
+    <ul class="comments-container">
+      <% if @comments.any? %>
+        <% @comments.each do |comment| %>
+          <li>
+            <p><%= comment.author.name %>: <%= comment.text %></p>
+          </li>
+        <% end %>
+      <% else %>
+        <li>No comments yet...</li>
+      <% end %>
+    </ul>
+  </div>
+</main>

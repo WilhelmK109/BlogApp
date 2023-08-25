@@ -1,11 +1,10 @@
 class UsersController < ApplicationController
   def index
-    # Placeholder for users index page
-    # render plain: "Here is a list of users"
+    @users = User.all
   end
 
   def show
-    # Placeholder for user show page
-    # render plain: "Here is the profile of a user"
+    @user = User.find(params[:id])
+    @posts = @user.three_most_recent_posts
   end
 end
