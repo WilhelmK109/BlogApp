@@ -13,6 +13,17 @@
       </div>
     </article>
 
+    <div class="actions">
+      <%= form_with(model: @like, url: user_post_likes_path(@user, @post), method: :post, remote: false) do |f| %>
+        <div class="add-comment-btn">
+          <%= f.submit 'Like'%>
+        </div>
+      <% end %>
+      <div>
+        <%= link_to "Add Comment", new_user_post_comment_path(@user, @post) %>
+      </div>
+    </div>
+
     <ul class="comments-container">
       <% if @comments.any? %>
         <% @comments.each do |comment| %>

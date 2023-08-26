@@ -1,0 +1,16 @@
+<main class="post-form-page">
+  <h2>Create new post</h2>
+  <%= form_with(model: @post, url: user_create_post_path, method: :post, remote: false) do |f| %>
+    <div class="field">
+      <%= f.label :title %>
+      <%= f.text_area :title, required: true, pattern: ".{3}", title: "Title should be atleast 3 characters long", placeholder: "Enter Post Title Here" %>
+    </div>
+    <div class="field">
+      <%= f.label :text %>
+      <%= f.text_area :text, required: true, title: "Post can not be empty", placeholder: "Enter Text Here" %>
+    </div>
+    <div class="actions">
+      <%= f.submit 'Create Post'%>
+    </div>
+  <% end %>
+</main>
