@@ -33,4 +33,4 @@ RSpec.describe 'Posts Workflow', type: :feature do
       expect(page).to have_content(post.comments_counter)
     end
   end
-end 
+end
