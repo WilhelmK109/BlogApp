@@ -9,6 +9,10 @@ RSpec.describe 'User Workflow', type: :feature do
       expect(page).to have_content(user.name)
       expect(page).to have_selector("img[src='#{user.photo}']")
       expect(page).to have_content(user.posts_counter)
+
+      expect(page).to have_content(user2.name)
+      expect(page).to have_selector("img[src='#{user2.photo}']")
+      expect(page).to have_content(user2.posts_counter)
     end
 
     it 'redirects to user show page when clicking on a user' do
@@ -24,6 +28,11 @@ RSpec.describe 'User Workflow', type: :feature do
       expect(page).to have_content(user.name)
       expect(page).to have_selector("img[src='#{user.photo}']")
       expect(page).to have_content(user.bio)
+
+      visit user_path(user2) # Add this line
+      expect(page).to have_content(user2.name) # Add this line
+      expect(page).to have_selector("img[src='#{user2.photo}']") # Add this line
+      expect(page).to have_content(user2.bio)
     end
 
     it 'displays the user\'s first 3 posts' do
