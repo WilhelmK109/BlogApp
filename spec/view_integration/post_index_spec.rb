@@ -58,15 +58,19 @@ RSpec.describe 'Posts Workflow', type: :feature do
       click_link(post.title)
       expect(page).to have_current_path(user_post_path(user, post))
     end
-  end
 
-  describe 'Post show page' do
-    it 'displays post information, title, author, author, and comments' do
+    it 'can see the username of each commenter.' do
       visit user_post_path(user, post)
-      expect(page).to have_content(post.title)
-      expect(page).to have_content(user.name)
-      expect(page).to have_content("Comments: #{post.comments.count}")
-      expect(page).to have_content("Likes: #{post.likes.count}")
+      post.comments.each do |comment|
+        expect(page).to have_content(comment.author.name)
+      end
+    end
+
+    it 'can see the comment each commenter left.' do
+      visit user_post_path(user, post)
+      post.comments.each do |comment|
+        expect(page).to have_content(comment.text)
+      end
     end
   end
 end
