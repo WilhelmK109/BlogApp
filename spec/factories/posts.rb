@@ -4,7 +4,10 @@ FactoryBot.define do
     association :author, factory: :user
     title { 'Example Post' }
     text { 'This is an example post' }
-    comments_counter { 2 }
-    likes_counter { 2 }
+
+    after(:create) do |post|
+      create_list(:comment, 2, post:)
+      create_list(:like, 2, post:)
+    end
   end
 end
