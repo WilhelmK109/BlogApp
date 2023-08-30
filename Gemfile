@@ -8,6 +8,8 @@ gem 'rails', '~> 7.0.7'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 
+gem 'factory_bot_rails'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
