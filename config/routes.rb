@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "home#index"
+  root "users#index"
   resources :users, only: [:index, :show] do
     resources :posts, only: [:index, :new, :show, :create] do
       resources :comments, only: [:new, :create]
