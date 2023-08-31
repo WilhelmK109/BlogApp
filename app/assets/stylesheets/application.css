@@ -167,8 +167,20 @@ form {
   max-width: 600px;
 }
 
-label {
-  display: none;
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="submit"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  cursor: pointer;
 }
 
 textarea#comment_text,
@@ -179,8 +191,23 @@ textarea#post_text {
   padding: 10px;
 }
 
-button:hover {
-  background-color: aqua;
+.navbar {
+  color: blue;
+  padding: 10px;
+  text-align: right;
+}
+
+.navbar-link {
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.field {
+  margin-bottom: 10px;
+}
+
+.actions {
+  margin-top: 10px;
 }
 
 @media (min-width: 765px) {
